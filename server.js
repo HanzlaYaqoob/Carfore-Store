@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
 app.use(cors({
-  origin: "https://carfore-store-production.up.railway.app", // Replace with your actual frontend URL
+  origin: "http://localhost:5173", // Replace with your actual frontend URL
 }));
 app.use(express.json({ limit: "10mb" })); // allows you to parse the body of the request
 app.use(cookieParser());
@@ -31,12 +31,6 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/coupons", couponRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/analytics", analyticsRoutes);
-
-if (process.env.NODE_ENV === "production") {
-app.use(cors({
-  origin: "https://carfore-store-production.up.railway.app", // Replace with your actual frontend URL
-}));
-}
 
 app.listen(PORT, () => {
 	console.log("Server is running on http://localhost:" + PORT);
