@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
 app.use(cors({
-  origin: "https://your-frontend.vercel.app", // Replace with your actual frontend URL
+  origin: "https://carfore-store-production.up.railway.app", // Replace with your actual frontend URL
 }));
 app.use(express.json({ limit: "10mb" })); // allows you to parse the body of the request
 app.use(cookieParser());
